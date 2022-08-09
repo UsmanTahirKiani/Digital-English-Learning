@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="html2canvas.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <style>
+        .titlee {
+            height: 120px;
+            width: 420px;
+            left: 430px;
+            top: 150px;
+            text-align: center;
+            position: relative;
+            font-size: 52px;
+
+        }
+
+        .detailss {
+            font-size: 40px;
+            height: 120px;
+            width: 380px;
+            left: 500px;
+            top: 230px;
+            text-align: justify;
+            position: relative;
+
+        }
+
+        .footerss {
+            font-size: 35px;
+            height: 120px;
+            width: 700px;
+            left: 90px;
+            top: 510px;
+            text-align: left;
+            position: relative;
+
+        }
+
+        .ac {
+            background-image: url("card1.jpg");
+            background-color: #cccccc;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 1000px;
+            height: 1000px;
+            margin: auto;
+            border: 3px solid black;
+        }
+
+        .pi {
+            background-color: #cccccc;
+            background-repeat: no-repeat;
+            background-position: center center;
+            width: 1000px;
+            height: 1000px;
+            margin: auto;
+            border: 3px solid black;
+        }
+
+        .center {
+
+            justify-content: center;
+            align-items: center;
+            width: 500px;
+            margin: 50px auto;
+        }
+
+        p {
+            color: black;
+            position: relative;
+            font-family: Calibri;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <div width="100%">
+            Enter Title:
+            </br>
+            <input style="width:430px" type="text" id="test3" value="Title Title Title Title Title Title Title">
+        </div>
+        <div width="100%">
+            Enter Detail:</br> <textarea id="test4" name="textarea" rows="5" cols="50">Write something here</textarea>
+        </div>
+        <div width="100%">
+            Enter Footer:
+            </br>
+            <input style="width:430px" type="text" id="test5" value="Footer Footer Footer Footer Footer Footer">
+        </div>
+        <button onclick="myFun()">Set Text</button>
+        <button onclick="myFunction()">Capture</button>
+    </div>
+    <div id="capture" class="ac">
+        <div class="titlee">
+            <p id="test1"><b>Title Title Title Title Title Title Title</b></p>
+        </div>
+        <div class="detailss">
+            <p id="test2">Write something here Write something here Write something here Write something here</p>
+        </div>
+        <div class="footerss">
+            <p id="test6">Footer Footer Footer Footer Footer Footer</p>
+        </div>
+    </div>
+
+    <div id="#previewImage" class="pi">
+    </div>
+</body>
+<script>
+
+    function myFun() {
+        var x = $("#test3").val();
+        var y = $("#test4").val();
+        var z = $("#test5").val();
+        $("#test1").text(x);
+        $("#test2").text(y);
+        $("#test6").text(z);
+    };
+
+    function myFunction() {
+        html2canvas(document.querySelector("#capture")).then(canvas => {
+            document.getElementById("#previewImage").appendChild(canvas)
+        });
+    };
+
+
+</script>
+
+</html>
